@@ -8,6 +8,7 @@
 
 <table border="0" cellpadding="2" cellspacing="0">
 
+{% if entries %}
 {% for entry in entries %}
 <tr><td class="thumbnail">
    <img src="{{ entry.media.thumbnail.0.url }}" />
@@ -24,5 +25,11 @@
 {% endfor %}
 </table>
 
+{% else %}
+<span class="error_text">An error has ocurred</span>
+
+{% endif %}
 {% endblock %}
+
+
 

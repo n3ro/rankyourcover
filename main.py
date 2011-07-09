@@ -168,7 +168,7 @@ class SaveVidUrlHandler(webapp.RequestHandler):
 
         video = Video(video_id=vid_id, tags=vid_tags, categories=vid_cats, band=vid_band, song=vid_song)
         video.put()
-        self.redirect('/submit')
+        self.redirect('/')
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
