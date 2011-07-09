@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Youtube Cover rankings{% endblock %}
+
+{% block body %}
+<span class="listing_title">Recently Covers Videos</span>
+<br /><br />
+
+<table border="0" cellpadding="2" cellspacing="0">
+
+{% for entry in entries %}
+<tr><td class="thumbnail">
+   <img src="{{ entry.media.thumbnail.0.url }}" />
+<br /><br />
+<span class="video_rating">Rating: {{ entry.rating.average }} of 5 stars<br/> {{ entry.rating.num_raters }} Votes by {{ entry.author.0.name.text }}</span>
+</td>
+<td valign="top">
+<span class="video_title"><a href="/songsvids?song_name={{ songs.pop }}" >{{ entry.title.text }}</a> </span><br />
+<span class="video_description">{{ entry.media.description }}</span><br /><br />
+<span class="video_category"><strong>{{ entry.media.category|first }}</strong></span>
+<span class="video_keywords"><strong>Keywords: </strong> {{ entry.media.keywords }} </span><br />
+</td></tr>
+<tr><td height="20" colspan="2"><hr class="slight"/></td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+

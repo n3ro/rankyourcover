@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+        </head>
+<body>
+
+<div id="video_listing">
+
+<table border="0" cellpadding="2" cellspacing="0">
+<tr>
+<td><a href="/">Home</a></td><td></td><td><a href="/bands">Bands</a></td><td></td><td><a href="/songs">Songs</a></td><td></td><td><a href="/submit">Originals</a></td><td></td><td><a href="/submitcover">Submit Vid!</a></td><td></td><td><a href="/submit">Have a band?</a></td>
+</tr>
+<tr><td height="20" colspan="12"><hr class="slight"/></td></tr>
+</table>
+<br />
+
+{% block body %}{% endblock %}
+</div>
+</body>
+</html>

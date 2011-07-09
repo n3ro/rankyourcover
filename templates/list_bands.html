@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Youtube cover rankings {% endblock %}
+
+{% block body %}
+<span class="listing_title">Band list</span>
+<br /><br />
+
+<table border="0" cellpadding="2" cellspacing="0">
+{% for band in bands %}
+<tr>
+<td><a href="/search?band_name={{ band }}">{{ band|capfirst }}</a></td>
+</tr>
+<tr><td height="20" colspan="1"><hr class="slight"/></td></tr>
+{% endfor %}
+</table>
+<br />
+{% endblock %}

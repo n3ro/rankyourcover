@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Submit video {% endblock %}
+
+{% block body %}
+<span class="listing_title">Song list</span>
+<br /><br />
+
+<table border="0" cellpadding="2" cellspacing="0">
+{% for data in songs %}
+<tr>
+<td><a href="/songsvids?song_name={{ data.0 }}">{{ data.0|capfirst }} </a> ({{ data.1}} videos)</td>
+</tr>
+<tr><td height="20" colspan="1"><hr class="slight"/></td></tr>
+{% endfor %}
+</table>
+<br />
+{% endblock %}

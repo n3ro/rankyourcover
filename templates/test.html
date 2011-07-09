@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Youtube Covers rankings</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+        </head>
+<body>
+<div id="video_listing">
+<span class="listing_title">Recently Covers Videos</span>
+<br /><br />
+
+<table border="0" cellpadding="2" cellspacing="0">
+<td><a href="">Band</a></td><td><a href="">Song</a></td>
+</table>
+<br />
+<table border="0" cellpadding="2" cellspacing="0">
+
+{% for entry in entries %}
+<tr><td class="thumbnail">
+   <img src="{{ entry.media.thumbnail.0.url }}" />
+<br /><br />
+<span class="video_rating">Rating: {{ entry.rating.average }} of 5 stars<br/> {{ entry.rating.num_raters }} Votes by {{ entry.author.0.name.text }}</span>
+</td>
+<td valign="top">
+<span class="video_title">{{ entry.title.text }} </span><br />
+<span class="video_description">{{ entry.media.description }}</span><br /><br />
+<span class="video_category"><strong>{{ entry.media.category|first }}</strong></span>
+<span class="video_keywords"><strong>Keywords: </strong> {{ entry.media.keywords }} </span><br />
+</td></tr>
+<tr><td height="20" colspan="2"><hr class="slight"/></td></tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

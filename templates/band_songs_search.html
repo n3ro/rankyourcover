@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Youtube cover rankings {% endblock %}
+
+{% block body %}
+<span class="listing_title">{{ band_name|capfirst }} songs</span>
+<br /><br />
+
+<table border="0" cellpadding="2" cellspacing="0">
+{% for song in songs %}
+<tr>
+<td><a href="/songsvids?song_name={{song}}">{{ song|capfirst }}</a></td>
+</tr>
+<tr><td height="20" colspan="1"><hr class="slight"/></td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+

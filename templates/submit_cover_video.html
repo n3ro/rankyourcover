@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Submit video {% endblock %}
+
+{% block body %}
+
+<span class="listing_title">Submit your cover video</span>
+<br /><br />
+<form action="save" method="get">
+<table>
+<tr>
+<td>Video URL: </td><td><input type="text" name="video_url" /></td>
+</tr>
+<tr>
+<td>Band:</td><td> <input type="text" name="band_name" /></td>
+</tr>
+<tr>
+<td>Song:</td><td> <input type="text" name="song_name" /></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="submit" /></td>
+</tr>
+</table>
+{% endblock %}
